@@ -1,0 +1,125 @@
+import java.util.Scanner;
+public class App{
+
+    public static void main(String args[]){
+
+        byte elegir, intentoMaximo = 3, intentos = 0;
+        double altura = 0, radio = 0, areaLateral = 0, pBase, volumenCilindro = 0, aBase , areaTotal=0;
+
+
+        Scanner menu = new Scanner(System.in);
+
+        System.out.println("Se realizar un menu donde se pueda escoger las");
+        System.out.println("Las siguientes figuras gemoetricas y que operaciones desea realizar con ella");
+        elegir=menu.nextByte();
+
+        
+            switch (elegir) {
+                case 1:
+                    
+                
+              System.out.println("Se realizaran los calculos de un cilindro");
+              System.out.println("");
+              
+
+              System.out.println("No se puede ingresar valores negativos");                      
+              while(intentos<intentoMaximo){
+
+              System.out.println("");
+                      
+              System.out.println("para sacar el area latearal de un cilindro");
+              System.out.println("Se necesita lo siguiente altura y radio");
+
+              System.out.println("");
+              
+              System.out.println("Cual es la altura del cilindro ");
+              
+              altura=menu.nextDouble();
+
+              System.out.println("");
+              
+              System.out.println("Cual es el radio del cilindro");
+              radio=menu.nextDouble();
+              
+
+              pBase = (2 * Math.PI) * radio;
+
+              areaLateral = pBase * altura;
+                      
+              System.out.println("");
+
+                
+              System.out.println("Para sacar el area total de un cilindro");
+              System.out.println("Se necesita lo siguiente el area lateral, pi, radio cuadrado y a base");
+
+              System.out.println("");
+              
+              System.out.println("Cual es el radio");
+              radio=menu.nextDouble();
+              
+
+              aBase = Math.PI * Math.pow(radio, 2);
+              areaTotal = areaLateral + 2*aBase; 
+
+              System.out.println("");
+
+              System.out.println("Para sacar el volumen de un cilindro se le pedira que ingrese los siguientes datos ");
+
+              System.out.println("");
+              
+              System.out.println("Cual es la altura del cilindro");
+              altura=menu.nextDouble();
+              
+
+              System.out.println("");
+              
+              System.out.println("Cual es el radio");
+              radio=menu.nextDouble();
+              
+
+              aBase = Math.PI * Math.pow(radio, 2);
+              
+              volumenCilindro = aBase * altura;
+
+              if(radio>0||altura>0){
+                break;
+              }else{
+                System.out.println("No se puede ingresar valores negativos");
+                System.out.println("");
+                if(intentos <3){
+
+                    System.out.println("Intentelo nuevamente");
+                }
+              }
+              intentos++;
+            } 
+              
+              if(intentos == intentoMaximo){
+                
+              System.out.println("Ah utilizado todos sus intentos");
+              }else{
+
+              System.out.println("El area lateral del cilindro es "+areaLateral);  
+              System.out.println("");
+              System.out.println("El area total del cilindro es "+areaTotal);
+              System.out.println("");
+              System.out.println("El volumen del cilindro es "+volumenCilindro);
+            }
+              break;
+
+              default:
+              System.out.println("Digite bien el numero");
+              System.out.println("Saliendo del programa");
+
+                break;
+
+                }menu.close();
+
+            }
+
+        }
+                
+            
+                
+            
+        
